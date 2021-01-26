@@ -1,8 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Board from "../../Board/Board";
+import PathFinder from "../../PathFinder";
 
 function App() {
+  const board = new Board(8);
+  // eslint-disable-next-line
+  const pf = new PathFinder(board);
+  pf.start = { row: 0, col: 0 };
+  pf.dest = { row: 0, col: 1 };
+  console.log(pf.solve());
+
   return (
     <div className="App">
       <header className="App-header">
