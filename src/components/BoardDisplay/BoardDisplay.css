@@ -1,0 +1,18 @@
+.chessboard {
+    width: min(60vw, 600px);
+    height: min(60vw, 600px);
+    padding: 0px;
+    border: 0px;
+    border-spacing: 0px;
+}
+
+.black {
+    margin: 0px;
+    border: 0px;
+    background-color: #b58863;
+}
+.white {
+    margin: 0px;
+    border: 0px;
+    background-color: #f0d9b5;
+}

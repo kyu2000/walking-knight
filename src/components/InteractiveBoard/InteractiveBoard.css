@@ -1,0 +1,4 @@
+.flex_hcenter {
+    display: flex;
+    justify-content: center;
+}

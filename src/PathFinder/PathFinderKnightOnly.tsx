@@ -115,7 +115,7 @@ class PathFinderKnightOnly extends PathFinder {
         return paths.map(path => path.map(vertex => {
             const board = new Board(this.board.width, this.board.height);
             const coord: Coord = this.convert_vertex_to_coord(vertex);
-            board.set_piece(BoardPiece.Knight, coord.row, coord.col);
+            board.set_piece(BoardPiece.BlackKnight, coord.row, coord.col);
             return board;
         }));
     }
