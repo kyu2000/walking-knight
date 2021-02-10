@@ -48,7 +48,7 @@ export default class InteractiveBoard extends React.Component<IInteractiveBoardP
         const board: Board = this.state.board;
 
         return (
-            <div className='flex_vcenter'>
+            <div className='flex_vcenter int_board_container'>
                 <div className='inline_flex_hcenter'>
                     <div>
                         <Paper elevation={5} square>
@@ -147,7 +147,7 @@ export default class InteractiveBoard extends React.Component<IInteractiveBoardP
                         disabled={!board.exists_start_and_dest()}
                         onClick={this.props.on_calculate(board)}
                     >
-                        Calculate
+                        Calculate Shortest Paths
                     </Button>
                 </div>
             </div>

@@ -11,6 +11,10 @@
     flex-direction: column;
 }
 
+.int_board_container { 
+    margin: 20px;
+}
+
 .calculate_button_container {
     margin: 20px;
 }
