@@ -1,1 +1,1 @@
-export { default } from "./BoardDisplay";
+export { default } from './BoardDisplay';

@@ -1,14 +1,6 @@
-.main_chessboard {
-    height: 600px;
-    width: 600px;
-    margin: 10px;   
-}
-
-.main_chessboard_container {
+.flex_vcenter {
     display: flex;
     justify-content: center;
-}
-
-.flex {
-    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

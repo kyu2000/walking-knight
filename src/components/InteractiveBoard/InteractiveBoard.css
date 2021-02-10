@@ -1,4 +1,16 @@
-.flex_hcenter {
+.inline_flex_hcenter {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.flex_vcenter {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calculate_button_container {
+    margin: 20px;
 }

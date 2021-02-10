@@ -1,6 +1,28 @@
 import React from 'react';
 import './BoardDisplay.css';
-import { Board, display_board_piece } from '../../Board';
+import { Board, BoardPiece } from '../../Board';
+import * as SVG from './svgs';
+
+function piece_to_svg(piece: BoardPiece): JSX.Element {
+    switch (piece) {
+        case BoardPiece.None:
+            return <div />;
+        case BoardPiece.Prev:
+            return <SVG.GreenSquare width='100%' height='100%' viewBox='0 0 45 45' />;
+        case BoardPiece.BlackKnight:
+            return <SVG.BlackKnight width='100%' height='100%' viewBox='0 0 45 45' />;
+        case BoardPiece.Dest:
+            return <SVG.WhiteKing width='100%' height='100%' viewBox='0 0 45 45' />;
+        case BoardPiece.WhiteKnight:
+            return <SVG.WhiteKnight width='100%' height='100%' viewBox='0 0 45 45' />;
+        case BoardPiece.WhiteBishop:
+            return <SVG.WhiteBishop width='100%' height='100%' viewBox='0 0 45 45' />;
+        case BoardPiece.WhiteRook:
+            return <SVG.WhiteRook width='100%' height='100%' viewBox='0 0 45 45' />;
+        case BoardPiece.WhiteQueen:
+            return <SVG.WhiteQueen width='100%' height='100%' viewBox='0 0 45 45' />;
+    }
+}
 
 interface IBoardDisplayProps {
     board: Board,
@@ -14,30 +36,56 @@ export default class BoardDisplay extends React.Component<IBoardDisplayProps, {}
     }
 
     render() {
-
         const rows = Array(this.props.board.height);
         for (let i = 0; i < this.props.board.height; i++) {
             rows[i] = Array(this.props.board.width);
             for (let j = 0; j < this.props.board.width; j++) {
-                const colour = (i + j) % 2 === 0 ? "white" : "black";
+                const colour = (i + j) % 2 === 0 ? 'white' : 'black';
+                const piece = this.props.board.squares[i][j];
                 rows[i][j] = (
-                    <td className={colour} onClick={this.props.on_click(i, j)}>
-                        <div style={{ width: 0, height: 0, fontSize: 72, display: "flex", justifyContent: "center", alignContent: "center", flexDirection: "column" }}>
-                            {display_board_piece(this.props.board.squares[i][j])}
-                        </div>
-                    </td>
+                    <div className={colour} style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={this.props.on_click(i, j)}>
+                        {piece !== BoardPiece.None && piece_to_svg(piece)}
+                    </div>
                 );
             }
         }
 
         return (
-            <table className={"chessboard"}>
+            <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 {rows.map(value => (
-                    <tr>
+                    <div style={{ height: '100%', display: 'inline-flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                         {value}
-                    </tr>
+                    </div>
                 ))}
-            </table>
+            </div>
         );
     }
+
+    // render() {
+
+    //     const rows = Array(this.props.board.height);
+    //     for (let i = 0; i < this.props.board.height; i++) {
+    //         rows[i] = Array(this.props.board.width);
+    //         for (let j = 0; j < this.props.board.width; j++) {
+    //             const colour = (i + j) % 2 === 0 ? 'white' : 'black';
+    //             rows[i][j] = (
+    //                 <td className={colour} onClick={this.props.on_click(i, j)}>
+    //                     <div style={{ width: 0, height: 0, fontSize: 72, display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column' }}>
+    //                         {display_board_piece(this.props.board.squares[i][j])}
+    //                     </div>
+    //                 </td>
+    //             );
+    //         }
+    //     }
+
+    //     return (
+    //         <table className={'chessboard'}>
+    //             {rows.map(value => (
+    //                 <tr>
+    //                     {value}
+    //                 </tr>
+    //             ))}
+    //         </table>
+    //     );
+    // }
 }

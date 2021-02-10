@@ -1,6 +1,6 @@
 import PathFinder from './PathFinder';
-import Board from "../Board/Board";
-import Coord from "../Board/Coord";
+import Board from '../Board/Board';
+import Coord from '../Board/Coord';
 import { BoardPiece } from '../Board';
 
 class PathFinderKnightOnly extends PathFinder {
@@ -112,13 +112,35 @@ class PathFinderKnightOnly extends PathFinder {
                 }
             }
         }
-        return paths.map(path => path.map(vertex => {
-            const board = new Board(this.board.width, this.board.height);
-            const coord: Coord = this.convert_vertex_to_coord(vertex);
-            board.set_piece(BoardPiece.BlackKnight, coord.row, coord.col);
-            return board;
-        }));
+        return paths.map(path => {
+            const result_path: Board[] = [];
+            let board = this.board;
+            for (let i = 0; i < path.length; ++i) {
+                board = board.clone();
+                const move_dest: Coord = this.convert_vertex_to_coord(path[i]);
+                if (i > 0) {
+                    if (i > 1) {
+                        const prev_move_src: Coord = this.convert_vertex_to_coord(path[i - 2]);
+                        board.set_piece(BoardPiece.None, prev_move_src.row, prev_move_src.col);
+                    }
+                    const move_src: Coord = this.convert_vertex_to_coord(path[i - 1]);
+                    board.move_piece(move_src.row, move_src.col, move_dest.row, move_dest.col);
+                }
+                result_path.push(board);
+            }
+            return result_path;
+        });
     }
 }
 
 export default PathFinderKnightOnly;
+// path.map((vertex, i) => {
+//     const board = this.board.clone();
+//     const coord: Coord = this.convert_vertex_to_coord(vertex);
+//     board.find_all_and_delete(BoardPiece.Prev);
+//     if (i > 0) {
+//         const prev: Coord = this.convert_vertex_to_coord(path[i - 1]);
+//         board.move_piece(prev.row, prev.col, coord.row, coord.col);
+//     }
+//     return board;
+// }));

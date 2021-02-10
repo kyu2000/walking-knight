@@ -1,0 +1,9 @@
+.inline_flex_h {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.flex_v {
+    display: flex;
+    flex-direction: column;
+}
