@@ -1,7 +1,7 @@
 {
   "name": "walking-knight",
   "version": "0.1.0",
-  "homepage": "https://github.com/kenvinyu/walking-knight",
+  "homepage": "https://kenvinyu.github.io/walking-knight",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
