@@ -19,12 +19,12 @@ export default class PathFinderGeneral extends PathFinder {
             node = queue.shift()!;
 
             const coord: Coord = node.last_coord;
-            if (coord.row === this.dest.row && coord.col === this.dest.col) {
+            if (reached_dest > 0 && reached_dest < node.path_length) {
+                break;
+            } else if (coord.row === this.dest.row && coord.col === this.dest.col) {
                 paths.push(node.path);
                 reached_dest = node.path_length;
-            } else if (reached_dest > 0 && reached_dest < node.path_length) {
-                break;
-            } else {
+            } else if (reached_dest < node.path_length) {
                 for (const new_node of node.split_into_neighbours()) {
                     queue.push(new_node);
                 }

@@ -58,7 +58,13 @@ export default class PathHead {
                 new_board.set_piece(BoardPiece.None, new_coord.row, new_coord.col);
                 neighbours.push(new PathHead(new_path, new_board));
             } else {
-                neighbours.push(new PathHead(new_path, this._board, this._blocked));
+                const new_blocked: boolean[][] = new Array(this._board.height);
+                for (let i = 0; i < this._board.height; i++) {
+                    new_blocked[i] = [...this._blocked[i]];
+                }
+                const prev_coord = this.last_coord;
+                new_blocked[prev_coord.row][prev_coord.col] = true;
+                neighbours.push(new PathHead(new_path, this._board, new_blocked));
             }
         }
         return neighbours;
