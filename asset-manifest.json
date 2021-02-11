@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/walking-knight/static/css/main.6f0d0287.chunk.css",
+    "main.js": "/walking-knight/static/js/main.6a0ae2b5.chunk.js",
+    "main.js.map": "/walking-knight/static/js/main.6a0ae2b5.chunk.js.map",
+    "runtime-main.js": "/walking-knight/static/js/runtime-main.724e1bf0.js",
+    "runtime-main.js.map": "/walking-knight/static/js/runtime-main.724e1bf0.js.map",
+    "static/css/2.c9598608.chunk.css": "/walking-knight/static/css/2.c9598608.chunk.css",
+    "static/js/2.964d59cd.chunk.js": "/walking-knight/static/js/2.964d59cd.chunk.js",
+    "static/js/2.964d59cd.chunk.js.map": "/walking-knight/static/js/2.964d59cd.chunk.js.map",
+    "index.html": "/walking-knight/index.html",
+    "static/css/2.c9598608.chunk.css.map": "/walking-knight/static/css/2.c9598608.chunk.css.map",
+    "static/css/main.6f0d0287.chunk.css.map": "/walking-knight/static/css/main.6f0d0287.chunk.css.map",
+    "static/js/2.964d59cd.chunk.js.LICENSE.txt": "/walking-knight/static/js/2.964d59cd.chunk.js.LICENSE.txt",
+    "static/media/black_bishop.775d61eb.svg": "/walking-knight/static/media/black_bishop.775d61eb.svg",
+    "static/media/black_king.5fcaaec4.svg": "/walking-knight/static/media/black_king.5fcaaec4.svg",
+    "static/media/black_knight.0d6ee220.svg": "/walking-knight/static/media/black_knight.0d6ee220.svg",
+    "static/media/black_pawn.a0ce6f51.svg": "/walking-knight/static/media/black_pawn.a0ce6f51.svg",
+    "static/media/black_queen.5b0cb18c.svg": "/walking-knight/static/media/black_queen.5b0cb18c.svg",
+    "static/media/black_rook.e449d0a7.svg": "/walking-knight/static/media/black_rook.e449d0a7.svg",
+    "static/media/green_square.d99c95e4.svg": "/walking-knight/static/media/green_square.d99c95e4.svg",
+    "static/media/index.css": "/walking-knight/static/media/roboto-latin-900italic.cb5ad999.woff2",
+    "static/media/white_bishop.490eea83.svg": "/walking-knight/static/media/white_bishop.490eea83.svg",
+    "static/media/white_king.752ef8d1.svg": "/walking-knight/static/media/white_king.752ef8d1.svg",
+    "static/media/white_knight.ced36e92.svg": "/walking-knight/static/media/white_knight.ced36e92.svg",
+    "static/media/white_pawn.01b8c879.svg": "/walking-knight/static/media/white_pawn.01b8c879.svg",
+    "static/media/white_queen.de57dfc5.svg": "/walking-knight/static/media/white_queen.de57dfc5.svg",
+    "static/media/white_rook.c0773cd5.svg": "/walking-knight/static/media/white_rook.c0773cd5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.724e1bf0.js",
+    "static/css/2.c9598608.chunk.css",
+    "static/js/2.964d59cd.chunk.js",
+    "static/css/main.6f0d0287.chunk.css",
+    "static/js/main.6a0ae2b5.chunk.js"
+  ]
+}
