@@ -1,0 +1,1 @@
+export { PieceButton as default } from './PieceButton';

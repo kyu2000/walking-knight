@@ -1,0 +1,13 @@
+.piece_button { 
+    display: inline;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.piece_button_inside_container { 
+    height: 45px; 
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

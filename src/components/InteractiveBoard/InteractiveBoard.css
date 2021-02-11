@@ -11,8 +11,21 @@
     flex-direction: column;
 }
 
+.divider {
+    margin: 10px 0px;
+}
+
 .int_board_container { 
     margin: 20px;
+}
+
+.piece_card_container {
+    margin-left: 20px;
+}
+
+.piece_button_container { 
+    height: 45px; 
+    width: 45px;
 }
 
 .calculate_button_container {

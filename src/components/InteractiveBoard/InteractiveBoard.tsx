@@ -1,8 +1,8 @@
 import React from 'react';
 import './InteractiveBoard.css';
 import { Paper, Card, CardContent, Divider, Typography, Button } from '@material-ui/core';
-import { ToggleButton } from '@material-ui/lab';
 import BoardDisplay from '../BoardDisplay';
+import PieceButton from '../PieceButton';
 import { Board, BoardPiece } from '../../Board';
 
 interface IInteractiveBoardProps {
@@ -51,92 +51,73 @@ export default class InteractiveBoard extends React.Component<IInteractiveBoardP
             <div className='flex_vcenter int_board_container'>
                 <div className='inline_flex_hcenter'>
                     <div>
-                        <Paper elevation={5} square>
+                        <Paper elevation={4} square>
+                            {/* TODO: adapt width, height to viewport */}
                             <div style={{ width: 600, height: 600 }}>
                                 <BoardDisplay board={board} on_click={this.handle_click} />
                             </div>
                         </Paper>
                     </div>
 
-                    <Card style={{ marginLeft: 20 }}>
+                    <Card className='piece_card_container'>
                         <CardContent>
                             <Typography variant='h5' color='textSecondary'>
                                 Start
                             </Typography>
-                            <ToggleButton
-                                selected={this.state.selected === BoardPiece.BlackKnight}
-                                onChange={() => {
+                            <PieceButton
+                                selected={this.state.selected}
+                                piece={BoardPiece.BlackKnight}
+                                on_change={() => {
                                     this.setState({ selected: BoardPiece.BlackKnight })
                                 }}
-                            >
-                                ♞
-                            </ToggleButton>
+                            />
 
-                            <Divider />
+                            <Divider style={{ margin: '15px 0px' }} />
 
                             <Typography variant='h5' color='textSecondary'>
                                 Finish
                             </Typography>
-                            <ToggleButton
-                                selected={this.state.selected === BoardPiece.Dest}
-                                onChange={() => {
+                            <PieceButton
+                                selected={this.state.selected}
+                                piece={BoardPiece.Dest}
+                                on_change={() => {
                                     this.setState({ selected: BoardPiece.Dest })
                                 }}
-                            >
-                                Fin
-                            </ToggleButton>
+                            />
 
-                            <Divider />
+                            <Divider style={{ margin: '15px 0px' }} />
 
                             <Typography variant='h5' color='textSecondary'>
                                 Obstacles
                             </Typography>
-                            <ToggleButton
-                                selected={this.state.selected === BoardPiece.WhiteKnight}
-                                onChange={() => {
-                                    this.setState({ selected: BoardPiece.WhiteKnight })
-                                }}
-                            >
-                                ♘
-                            </ToggleButton>
-                            <ToggleButton
-                                selected={this.state.selected === BoardPiece.WhiteBishop}
-                                onChange={() => {
-                                    this.setState({ selected: BoardPiece.WhiteBishop })
-                                }}
-                            >
-                                ♗
-                            </ToggleButton>
-                            <ToggleButton
-                                selected={this.state.selected === BoardPiece.WhiteRook}
-                                onChange={() => {
-                                    this.setState({ selected: BoardPiece.WhiteRook })
-                                }}
-                            >
-                                ♖
-                            </ToggleButton>
-                            <ToggleButton
-                                selected={this.state.selected === BoardPiece.WhiteQueen}
-                                onChange={() => {
-                                    this.setState({ selected: BoardPiece.WhiteQueen })
-                                }}
-                            >
-                                ♕
-                            </ToggleButton>
+                            {[
+                                BoardPiece.WhiteKnight,
+                                BoardPiece.WhiteBishop,
+                                BoardPiece.WhiteRook,
+                                BoardPiece.WhiteQueen
+                            ].map(piece => (
+                                <PieceButton
+                                    selected={this.state.selected}
+                                    piece={piece}
+                                    on_change={() => {
+                                        this.setState({ selected: piece })
+                                    }}
+                                />
+                            ))
+                            }
 
-                            <Divider />
+                            <Divider style={{ margin: '15px 0px' }} />
 
                             <Typography variant='h5' color='textSecondary'>
                                 Delete
                             </Typography>
-                            <ToggleButton
-                                selected={this.state.selected === BoardPiece.None}
-                                onChange={() => {
+                            <PieceButton
+                                selected={this.state.selected}
+                                piece={BoardPiece.None}
+                                on_change={() => {
                                     this.setState({ selected: BoardPiece.None })
                                 }}
-                            >
-                                Del
-                            </ToggleButton>
+                            />
                         </CardContent>
                     </Card>
                 </div>

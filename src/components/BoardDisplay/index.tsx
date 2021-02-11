@@ -1,1 +1,1 @@
-export { default } from './BoardDisplay';
+export { default, piece_to_svg } from './BoardDisplay';

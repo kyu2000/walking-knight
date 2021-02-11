@@ -34,7 +34,7 @@ export default class App extends React.Component<{}, IAppState> {
                     board_default={board}
                     on_calculate={this.handle_calculate}
                 />
-                <SolutionCard board={board} />
+                {board.exists_start_and_dest() && <SolutionCard board={board} />}
 
             </div>
         );
