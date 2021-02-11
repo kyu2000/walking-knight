@@ -19,6 +19,7 @@ export default class App extends React.Component<{}, IAppState> {
 
     handle_calculate(board: Board): () => void {
         return () => {
+            console.log(board.calculate_defended());
             this.setState({ board: board.clone() });
         }
     }

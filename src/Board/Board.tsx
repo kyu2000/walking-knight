@@ -16,16 +16,20 @@ class Board {
         }
     }
 
-    get width(): number {
+    public get width(): number {
         return this._width;
     }
 
-    get height(): number {
+    public get height(): number {
         return this._height;
     }
 
-    get squares(): BoardPiece[][] {
+    public get squares(): BoardPiece[][] {
         return this._squares;
+    }
+
+    public get_piece(row: number, col: number) {
+        return this._squares[row][col];
     }
 
     public set_piece(piece: BoardPiece, row: number, col: number): void {
@@ -92,6 +96,85 @@ class Board {
             }
         }
         return exists_start && exists_dest;
+    }
+
+    public valid_coord(row: number, col: number): boolean {
+        return (
+            0 <= row && row < this.height &&
+            0 <= col && col < this.width
+        );
+    }
+
+    public calculate_sight(board_sight: boolean[][], as_piece: BoardPiece, row: number, col: number): void {
+        const obstacles: BoardPiece[] = [
+            BoardPiece.WhiteKnight,
+            BoardPiece.WhiteBishop,
+            BoardPiece.WhiteRook,
+            BoardPiece.WhiteQueen,
+        ];
+        let delta_x: number[] = [];
+        let delta_y: number[] = [];
+        switch (as_piece) {
+            case BoardPiece.WhiteKnight:
+                delta_x = [-2, -2, -1, -1, 1, 1, 2, 2];
+                delta_y = [-1, 1, -2, 2, -2, 2, -1, 1];
+                for (let i = 0; i < 8; i++) {
+                    const new_row: number = row + delta_x[i];
+                    const new_col: number = col + delta_y[i];
+                    if (this.valid_coord(new_row, new_col)) {
+                        board_sight[new_row][new_col] = true;
+                    }
+                }
+                return;
+            case BoardPiece.WhiteBishop:
+                delta_x = [-1, -1, 1, 1];
+                delta_y = [-1, 1, -1, 1];
+                break;
+
+            case BoardPiece.WhiteRook:
+                delta_x = [-1, 0, 0, 1];
+                delta_y = [0, -1, 1, 0];
+                break;
+        }
+        for (let i = 0; i < 4; i++) {
+            let new_row: number = row;
+            let new_col: number = col;
+            let keep_looping: boolean = true;
+            while (keep_looping) {
+                new_row += delta_x[i];
+                new_col += delta_y[i];
+                if (!this.valid_coord(new_row, new_col)) break;
+                if (obstacles.includes(this.squares[new_row][new_col])) {
+                    keep_looping = false;
+                }
+                board_sight[new_row][new_col] = true;
+            }
+        }
+    }
+
+    public calculate_defended(): boolean[][] {
+        const defended: boolean[][] = new Array(this.height);
+        for (let i = 0; i < this.height; i++) {
+            defended[i] = new Array(this.width);
+            defended[i].fill(false);
+        }
+
+        for (let i = 0; i < this.height; i++) {
+            for (let j = 0; j < this.width; j++) {
+                switch (this.squares[i][j]) {
+                    case BoardPiece.WhiteKnight:
+                    case BoardPiece.WhiteBishop:
+                    case BoardPiece.WhiteRook:
+                        this.calculate_sight(defended, this.squares[i][j], i, j);
+                        break;
+                    case BoardPiece.WhiteQueen:
+                        this.calculate_sight(defended, BoardPiece.WhiteBishop, i, j);
+                        this.calculate_sight(defended, BoardPiece.WhiteRook, i, j);
+                        break;
+                }
+            }
+        }
+        return defended;
     }
 }
 

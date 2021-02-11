@@ -11,6 +11,7 @@ interface ISolutionCardProps {
 }
 
 export default class SolutionCard extends React.Component<ISolutionCardProps, {}> {
+    // eslint-disable-next-line
     constructor(props: ISolutionCardProps) {
         super(props);
     }

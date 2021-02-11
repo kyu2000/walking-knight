@@ -1,7 +1,5 @@
 import PathFinder from './PathFinder';
-import Board from '../Board/Board';
-import Coord from '../Board/Coord';
-import { BoardPiece } from '../Board';
+import { Board, Coord, BoardPiece } from '../Board';
 
 class PathFinderKnightOnly extends PathFinder {
 

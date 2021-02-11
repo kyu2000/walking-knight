@@ -51,7 +51,7 @@ export default class BoardDisplay extends React.Component<IBoardDisplayProps, {}
         }
 
         return (
-            <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div onContextMenu={e => e.preventDefault()} style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 {rows.map(value => (
                     <div style={{ height: '100%', display: 'inline-flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                         {value}

@@ -1,1 +1,1 @@
-export { default } from './PathFinderKnightOnly';
+export { default } from './PathFinderGeneral';
