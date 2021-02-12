@@ -13,7 +13,12 @@ interface IPieceButtonProps {
 
 export const PieceButton = ({ piece, selected, on_change, tooltip }: IPieceButtonProps) => (
     <div className='piece_button'>
-        <Tooltip title={tooltip}>
+        <Tooltip
+            title={tooltip}
+            arrow
+            enterDelay={500}
+            enterNextDelay={500}
+        >
             <ToggleButton
                 selected={selected === piece}
                 onChange={on_change}

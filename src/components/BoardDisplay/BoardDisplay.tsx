@@ -48,7 +48,7 @@ export function piece_to_svg(piece: BoardPiece): JSX.Element {
         case BoardPiece.None:
             return <DeleteIcon fontSize='large' style={{ color: 'black' }} />;
         case BoardPiece.Prev:
-            return <SVG.GreenSquare width='100% ' height='100 % ' viewBox='0 0 45 45' />;
+            return <SVG.GreenSquare width='100% ' height='100% ' viewBox='0 0 45 45' />;
         case BoardPiece.BlackKnight:
             return <SVG.BlackKnight width='100%' height='100%' viewBox='0 0 45 45' />;
         case BoardPiece.Dest:

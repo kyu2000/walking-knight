@@ -1,7 +1,7 @@
 import React from 'react';
 import './SolutionCard.css';
 import { Card, CardContent, Typography } from '@material-ui/core';
-// import BoardDisplay from '../BoardDisplay';
+import { Animated } from 'react-animated-css';
 import { Board } from '../../Board';
 import PathFinder from '../../PathFinder';
 import SolutionRow from '../SolutionRow/SolutionRow';
@@ -59,8 +59,8 @@ export default class SolutionCard extends React.Component<ISolutionCardProps, {}
                 </div>
             );
 
-            // Blank view
         } else {
+            // Blank view
             card_content.push(
                 <div>
                     <Typography variant='h5'>
@@ -70,11 +70,19 @@ export default class SolutionCard extends React.Component<ISolutionCardProps, {}
             );
         }
         return (
-            <Card>
-                <CardContent>
-                    {card_content}
-                </CardContent>
-            </Card>
+            <Animated
+                animationIn='slideInUp'
+                animationInDuration={600}
+                animationOut='slideOutDown'
+                animationOutDuration={600}
+                isVisible={true}
+            >
+                <Card>
+                    <CardContent>
+                        {card_content}
+                    </CardContent>
+                </Card>
+            </Animated>
         );
 
     }

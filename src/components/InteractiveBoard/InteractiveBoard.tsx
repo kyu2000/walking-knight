@@ -83,7 +83,10 @@ export default class InteractiveBoard extends React.Component<IInteractiveBoardP
                                 <Typography variant='h5' color='textSecondary'>
                                     Finish
                                 </Typography>
-                                <Tooltip title='Only for marking destination. Does not attack.'>
+                                <Tooltip
+                                    title='Only for marking destination. Does not attack.'
+                                    arrow
+                                >
                                     <InfoIcon className='icon' style={{ fontSize: 16 }} />
                                 </Tooltip>
                             </div>
@@ -102,7 +105,12 @@ export default class InteractiveBoard extends React.Component<IInteractiveBoardP
                                 <Typography variant='h5' color='textSecondary'>
                                     Obstacles
                                 </Typography>
-                                <Tooltip title='Obstacles have the same attack patterns as their equivalent chess piece. The Black Knight cannot move into a square under attack. Obstacles do not move.'>
+                                <Tooltip
+                                    title='Obstacles have the same attack patterns as their equivalent chess piece.
+                                           The Black Knight cannot move into a square under attack.
+                                           Obstacles do not move.'
+                                    arrow
+                                >
                                     <InfoIcon className='icon' style={{ fontSize: 16 }} />
                                 </Tooltip>
                             </div>
@@ -158,7 +166,10 @@ export default class InteractiveBoard extends React.Component<IInteractiveBoardP
                     </Card>
                 </div>
                 <div className='inline_flex_hcenter calculate_button_container'>
-                    <Tooltip title={disable_button ? 'Place Start and Finish' : ''}>
+                    <Tooltip
+                        title={disable_button ? 'Place Start and Finish' : ''}
+                        arrow
+                    >
                         <span>
                             <Button
                                 variant='contained'
