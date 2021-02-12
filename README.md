@@ -123,15 +123,15 @@ Project Link: [https://github.com/kenvinyu/walking-knight](https://github.com/ke
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/kenvinyu/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/kenvinyu/walking-knight.svg?style=for-the-badge
 [contributors-url]: https://github.com/kenvinyu/walking-knight/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/kenvinyu/repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/kenvinyu/walking-knight.svg?style=for-the-badge
 [forks-url]: https://github.com/kenvinyu/walking-knight/network/members
-[stars-shield]: https://img.shields.io/github/stars/kenvinyu/repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/kenvinyu/walking-knight.svg?style=for-the-badge
 [stars-url]: https://github.com/kenvinyu/walking-knight/stargazers
-[issues-shield]: https://img.shields.io/github/issues/kenvinyu/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/kenvinyu/walking-knight.svg?style=for-the-badge
 [issues-url]: https://github.com/kenvinyu/walking-knight/issues
-[license-shield]: https://img.shields.io/github/license/kenvinyu/repo.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/kenvinyu/walking-knight.svg?style=for-the-badge
 [license-url]: https://github.com/kenvinyu/walking-knight/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/kenvin-yu
