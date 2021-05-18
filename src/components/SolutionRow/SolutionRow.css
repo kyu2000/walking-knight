@@ -1,8 +1,8 @@
 .soln_row_container { 
-    /* width: 1000px; */
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
+    max-width: 90vw;
     margin: 7px 0px;
     border: 1px solid #eaeaea;
     border-top-left-radius: 20px;
@@ -54,5 +54,34 @@
     white-space: normal;
     width: 250px;
     height: 250px;
-    /* margin: 5px 0px; */
+}
+
+@media (max-width: 1000px) {
+    .soln_row_container {
+        max-width: 580px;
+    }
+
+    .soln_row_left_tab {
+        width: 50px;
+    }
+
+    .soln_board {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 700px) {
+    .soln_row_container {
+        max-width: 85vw;
+    }
+
+    .soln_row_left_tab {
+        width: 30px;
+    }
+
+    .soln_board {
+        width: 150px;
+        height: 150px;
+    }
 }

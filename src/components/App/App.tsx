@@ -27,7 +27,6 @@ export default class App extends React.Component<{}, IAppState> {
         const board = this.state.board;
         return (
             <div className='flex_vcenter'>
-
                 <InteractiveBoard
                     selected_default={BoardPiece.BlackKnight}
                     board_default={board}

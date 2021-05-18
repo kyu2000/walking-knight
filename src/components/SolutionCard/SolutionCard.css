@@ -1,4 +1,6 @@
 .soln_card_stats_container { 
+    width: 100%;
+    min-width: 920px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,10 +8,9 @@
 }
 
 .soln_card_stats_row_container {
-    width: 50%;
+    width: 500px;
     border: 1px solid #eaeaea;
     border-top: 0px;
-    /* padding: 12px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -40,4 +41,22 @@
 .flex_v {
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+    .soln_card_stats_container {
+        width: 600px;
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 700px) {
+    .soln_card_stats_container {
+        width: 85vw;
+        min-width: 85vw;
+    }
+
+    .soln_card_stats_row_container {
+        width: 60vw;
+    }
 }

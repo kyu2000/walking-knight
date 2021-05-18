@@ -11,3 +11,10 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 600px) {
+    .piece_button_inside_container { 
+        height: 30px;
+        width: 30px;
+    }
+}

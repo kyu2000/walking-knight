@@ -1,10 +1,13 @@
 import React from 'react';
 import './SolutionCard.css';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, CardContent, createMuiTheme, responsiveFontSizes, Typography, ThemeProvider } from '@material-ui/core';
 import { Animated } from 'react-animated-css';
 import { Board } from '../../Board';
 import PathFinder from '../../PathFinder';
 import SolutionRow from '../SolutionRow/SolutionRow';
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 interface ISolutionCardProps {
     board: Board
@@ -27,26 +30,34 @@ export default class SolutionCard extends React.Component<ISolutionCardProps, {}
                 <div className='soln_card_stats_container'>
                     <div className='soln_card_stats_row_container'>
                         <div className='soln_card_stats_row_title'>
-                            <Typography variant='h5'>
-                                Number of Knight Moves
-                            </Typography>
+                            <ThemeProvider theme={theme}>
+                                <Typography variant='h5'>
+                                    Number of Knight Moves
+                                </Typography>
+                            </ThemeProvider>
                         </div>
                         <div className='soln_card_stats_row_data'>
-                            <Typography variant='h5'>
-                                {solns.length > 0 ? (solns[0].length - 1) : 'N/A'}
-                            </Typography>
+                            <ThemeProvider theme={theme}>
+                                <Typography variant='h5'>
+                                    {solns.length > 0 ? (solns[0].length - 1) : 'N/A'}
+                                </Typography>
+                            </ThemeProvider>
                         </div>
                     </div>
                     <div className='soln_card_stats_row_container'>
                         <div className='soln_card_stats_row_title'>
-                            <Typography variant='h5'>
-                                Number of Shortest Paths
-                            </Typography>
+                            <ThemeProvider theme={theme}>
+                                <Typography variant='h5'>
+                                    Number of Shortest Paths
+                                </Typography>
+                            </ThemeProvider>
                         </div>
                         <div className='soln_card_stats_row_data'>
-                            <Typography variant='h5'>
-                                {solns.length > 0 ? solns.length : 'N/A'}
-                            </Typography>
+                            <ThemeProvider theme={theme}>
+                                <Typography variant='h5'>
+                                    {solns.length > 0 ? solns.length : 'N/A'}
+                                </Typography>
+                            </ThemeProvider>
                         </div>
                     </div>
                 </div >
