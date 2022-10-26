@@ -32,7 +32,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/kenvinyu/walking-knight">
+  <a href="https://github.com/kyu2000/walking-knight">
     <img src="public/knight.png" alt="Logo" width="80" height="80">
   </a>
 
